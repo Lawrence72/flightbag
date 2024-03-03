@@ -1,5 +1,5 @@
 # Flight Bag
-Flight bag is a lightweight tool kit for the Flight PHP Framework ([flightphp.com](flightphp.com))
+Flight bag is a lightweight tool kit for the Flight PHP Framework ([https://flightphp.com](https://flightphp.com))
 
 ### How to install
 
