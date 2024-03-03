@@ -1,6 +1,6 @@
 <?php
 
-namespace Lawrence72\Sanitizer;
+namespace Lawrence72\Flightbag;
 
 use flight\util\Collection;
 
