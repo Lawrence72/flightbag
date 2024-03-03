@@ -1,0 +1,7 @@
+
+.DS_Store
+.phpunit.cache/
+composer.lock
+vendor/
+*.code-workspace
+provisioning/
