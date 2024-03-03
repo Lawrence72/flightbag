@@ -21,6 +21,18 @@ $new_text = $sanitizer->clean($text,['b']);
 
 Sanitizer accepts strings,arrays,objects or Flight Collections
 
+#### Encoding the output
+
+By default, the sanitizer will encode charaters into UTF-8.
+
+This can be turned off by including a NULL value in the clean() method
+
+$new_text = $sanitizer->clean($text,[],NULL);
+
+Or change the encoding to another encoding type by adding the type to the clean() method. 
+$new_text = $sanitizer->clean($text,[],'GB18030');
+
+
 ### Session
 
 $session = new Session(); OR
