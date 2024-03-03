@@ -1,5 +1,5 @@
 # Flight Bag
-
+Flight bag is a lightweight tool kit for the Flight PHP Framework ([flightphp.com](flightphp.com))
 
 ### How to install
 
@@ -40,15 +40,15 @@ Session also accepts an optional encryption key. This will encrypt the session d
 
 $session = new Session('some_very_secure_key');
 
-#### Flash Messages
+##### Flash Messages
 
 Flash messages is also supported
 
 setFlash accepts a message and a class name to assign to the flash message.
 $session->setFlash('message','warning');
- 
+
 getFlash returns an array of recently added flash messages, flash messages are automatically removed after getFlash is called.
- 
+
 $session->getFlash();
 
 ### Cookie
