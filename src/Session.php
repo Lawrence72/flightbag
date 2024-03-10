@@ -6,9 +6,16 @@ class Session {
 
 	protected $encryption_key;
 
-	public function __construct($encryption_key = null) {
+	public function __construct(string $session_name = null, $encryption_key = null) {
 		$this->encryption_key = $encryption_key;
+		if (!empty($session_name)) {
+			$this->setSessionName($session_name);
+		}
 		self::start();
+	}
+
+	public function setSessionName(string $session_name) {
+		session_name($session_name);
 	}
 
 	public static function start() {
@@ -40,15 +47,16 @@ class Session {
 	}
 
 	public function setFlash($text, $type) {
-		if (!$this->has('flight_flash')) {
+		if (!$this->has('flight_flash') || !is_array($this->get('flight_flash'))) {
 			$this->set('flight_flash', []);
 		}
-
-		$this->set('flight_flash', array_push($this->get('flight_flash'), ['text' => $text, 'type' => $type]));
+		$flight_flash = $this->get('flight_flash');
+		$flight_flash[] = ['message' => $text, 'type' => $type];
+		$this->set('flight_flash', $flight_flash);
 	}
 
 	public function getFlash() {
-		$flash =  $this->has('flight_flash') ? $this->get('flight_flash') : null;
+		$flash =  $this->has('flight_flash') ? $this->get('flight_flash') : [];
 		$this->remove('flight_flash');
 		return $flash;
 	}
