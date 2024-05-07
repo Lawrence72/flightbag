@@ -85,7 +85,7 @@ class Sanitizer {
 	}
 
 	protected function encodeString($data, $encoding = 'UTF-8') {
-		return return \htmlspecialchars($data, ENT_QUOTES | ENT_HTML5, $encoding);
+		return \htmlspecialchars($data, ENT_QUOTES | ENT_HTML5, $encoding);
 	}
 
 	protected function removeNonPrintables($data) {
