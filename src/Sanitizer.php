@@ -85,15 +85,11 @@ class Sanitizer {
 	}
 
 	protected function encodeString($data, $encoding = 'UTF-8') {
-		return mb_convert_encoding(
-			$data,
-			'HTML-ENTITIES',
-			$encoding
-		);
+		return return \htmlspecialchars($data, ENT_QUOTES | ENT_HTML5, $encoding);
 	}
 
 	protected function removeNonPrintables($data) {
-		return preg_replace(
+		return \preg_replace(
 			'/[\x00-\x08\x0B\x0C\x0E-\x1F]/',
 			'',
 			$data
